@@ -1,5 +1,5 @@
 import { Component } from 'react';
-import { Oval } from 'react-loader-spinner'; // Importing Oval loader
+import { Oval } from 'react-loader-spinner'; // Correctly importing Oval loader
 import TeamCard from '../TeamCard';
 import './index.css';
 
@@ -44,8 +44,7 @@ class Home extends Component {
 
     renderLoader = () => (
         <div className="loader-container">
-            {/* Using the Oval loader */}
-            <Oval color="#ffffff" height={50} width={50} />
+            <Oval color="#ffffff" height={50} width={50} /> {/* Correct usage of Oval loader */}
         </div>
     );
 

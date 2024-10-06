@@ -1,17 +1,17 @@
-import { Routes, Route } from 'react-router-dom'
+import React from 'react';
+import { useRoutes } from 'react-router-dom'; // Ensure correct hook usage
+import Home from './components/Home';
+import TeamMatches from './components/TeamMatches';
+import NotFound from './components/NotFound';
 
-import Home from './components/Home'
-import NotFound from './components/NotFound'
-import TeamMatches from './components/TeamMatches'
+function App() {
+  const routes = useRoutes([
+    { path: '/', element: <Home /> },
+    { path: '/TeamMatches/:id', element: <TeamMatches /> },
+    { path: '*', element: <NotFound /> },
+  ]);
 
-import './App.css'
+  return routes;
+}
 
-const App = () => (
-  <Routes>
-    <Route exact path="/" component={Home} />
-    <Route exact path="/TeamMatches/:id" component={TeamMatches} />
-    <Route component={NotFound} />
-  </Routes>
-)
-
-export default App
+export default App;
